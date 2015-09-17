@@ -4,8 +4,7 @@
 
 <div class="hero-unit">
     <div class="row-fluid">
-	<p>Your PHP application is now running on the host &ldquo;<?php echo gethostname(); ?>&rdquo; in your own dedicated environment in the AWS&nbsp;Cloud.</p>
-        {%  for thought in thoughts %}
+	     {%  for thought in thoughts %}
             <blockquote>
                 <p>{{ thought.message }}</p>
                 <small>{{ thought.author }}</small>

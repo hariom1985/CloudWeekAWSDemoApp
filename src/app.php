@@ -49,14 +49,14 @@ $app->match('/add', function (Request $request) use ($app) {
                     ':author'  => $author,
                 );
                 if (!$query->execute($data)) {
-                    throw new \RuntimeException('Saving your thought to the database failed.');
+                    throw new \RuntimeException('Saving the thought to the database failed.');
                 }
             } else {
-                throw new \InvalidArgumentException('Sorry, The format of your thought was not valid.');
+                throw new \InvalidArgumentException('Sorry, The format of the thought was not valid.');
             }
 
             // Display a success message
-            $alert = array('type' => 'success', 'message' => 'Thank you for sharing your thought.');
+            $alert = array('type' => 'success', 'message' => 'Thank you for sharing the thought.');
         } catch (Exception $e) {
             // Display an error message
             $alert = array('type' => 'error', 'message' => $e->getMessage());
@@ -64,7 +64,7 @@ $app->match('/add', function (Request $request) use ($app) {
     }
 
     return $app['twig']->render('add.twig', array(
-        'title' => 'Share Your Thought!',
+        'title' => 'Share the Thought!',
         'alert' => $alert,
     ));
 });
